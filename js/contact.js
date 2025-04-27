@@ -42,9 +42,9 @@
         window.addEventListener('DOMContentLoaded', reveal);
         
         // Feedback Button Click Event
-        document.querySelector('.feedback-button').addEventListener('click', function(e) {
+    /*    document.querySelector('.feedback-button').addEventListener('click', function(e) {
             e.preventDefault();
             alert('Fitur kritik dan saran akan segera hadir. Terima kasih atas minat Anda!');
         });
-        
+        */
        
