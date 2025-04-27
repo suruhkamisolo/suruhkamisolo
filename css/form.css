@@ -1,0 +1,65 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  .form-container {
+    background-color: #1a1a1a;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  }
+  .form-control, .form-select {
+    background-color: #121212;
+    border-color: #333333;
+    color: #ffffff;
+  }
+  .form-control:focus, .form-select:focus {
+    background-color: #1e1e1e;
+    border-color: #FB499C;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(251, 73, 156, 0.25);
+  }
+  .form-label {
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+  }
+  .form-check-input {
+    background-color: #121212;
+    border-color: #333333;
+  }
+  .form-check-input:checked {
+    background-color: #FB499C;
+    border-color: #FB499C;
+  }
+  .submit-button {
+    transition: all 0.3s ease;
+  }
+  .submit-button:hover {
+    transform: translateY(-2px);
+  }
+  .btn-submit-ezzy {
+    background-color: #FB499C;
+    border-color: #FB499C;
+  }
+  .btn-submit-medium {
+    background-color: #FB499C;
+    border-color: #FB499C;
+  }
+  .btn-submit-expert {
+    background-color: #FB499C;
+    border-color: #FB499C;
+  }
+  .rules-box {
+    border: 1px solid #FB499C;
+    border-radius: 8px;
+    background-color: rgba(251, 73, 156, 0.1);
+  }
+  .detail-prompt {
+    color: #FB499C;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: none;
+  }
+  .text-pink {
+    color: #FB499C;
+  }
