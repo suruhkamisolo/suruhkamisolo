@@ -1,168 +1,85 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Formulir Suruh Kami</title>
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- SweetAlert2 -->
-  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css" rel="stylesheet">
-  <!--CSS Styling-->
-  <link rel="stylesheet" href="./css/form.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Requirement - SuruhKami.Solo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./css/loker.css">
 </head>
-<body class="py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8 col-lg-6">
-        <div class="form-container p-4 p-md-5">
-          <h2 class="text-center mb-4">Formulir Suruh Kami</h2>
-          
-          <form id="wa-form">
-            <div class="mb-3">
-              <label for="nama" class="form-label">Nama</label>
-              <input id="nama" class="form-control" type="text" placeholder="Nama Anda" />
-              <div id="nama-error" class="invalid-feedback">Nama wajib diisi.</div>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <img src="assets/logo.webp" alt="Logo" width="40" height="30" class="d-inline-block align-text-top">
+            <a class="navbar-brand" href="index.html">SuruhKami.Solo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Karir</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontak.html">Kontak</a>
+                    </li>
+                </ul>
             </div>
-            
-            <div class="mb-3">
-              <label for="telp" class="form-label">No HP</label>
-              <input id="telp" class="form-control" type="text" placeholder="Nomor WhatsApp Anda" />
-              <div id="telp-error" class="invalid-feedback">Nomor terlalu panjang (maksimal 20 karakter).</div>
-            </div>
-            
-            <div class="mb-3">
-              <label for="bantuan" class="form-label">Jenis Layanan</label>
-              <select id="bantuan" class="form-select">
-                <option value="">-- Pilih Layanan --</option>
-                <optgroup label="Easy">
-                  <option value="Beli makan/minum" data-difficulty="Ezzy">Beli makan/minum</option>
-                  <option value="Ambil/antar barang kecil" data-difficulty="Ezzy">Ambil/antar barang kecil</option>
-                  <option value="Fotokopi/print dokumen" data-difficulty="Ezzy">Fotokopi/print dokumen</option>
-                  <option value="Bayarin parkir" data-difficulty="Ezzy">Bayarkan parkir</option>
-                  <option value="Antriin makanan" data-difficulty="Ezzy">Antrikan makanan</option>
-                  <option value="Ngambil paket" data-difficulty="Ezzy">Ambil paket</option>
-                </optgroup>
-                <optgroup label="Medium">
-                  <option value="Angkut barang pindahan ringan" data-difficulty="Medium">Angkut barang pindahan ringan</option>
-                  <option value="Bersih-bersih rumah/kos" data-difficulty="Medium">Bersih-bersih rumah/kos</option>
-                  <option value="Cuci kendaraan ringan" data-difficulty="Medium">Cuci kendaraan ringan</option>
-                  <option value="Temenin belanja" data-difficulty="Medium">Temani belanja</option>
-                  <option value="Cariin barang di toko fisik" data-difficulty="Medium">Carikan barang di toko fisik</option>
-                  <option value="Pasang banner/spanduk" data-difficulty="Medium">Pasang banner/spanduk</option>
-                </optgroup>
-                <optgroup label="Hard">
-                  <option value="Ngasuh anak sementara" data-difficulty="Hard">Asuh anak sementara</option>
-                  <option value="Tugas kuliah" data-difficulty="Hard">Tugas kuliah</option>
-                  <option value="Ngecat kamar" data-difficulty="Hard">Cat kamar</option>
-                  <option value="Tukang batu/kayu dasar" data-difficulty="Hard">Tukang batu/kayu dasar</option>
-                  <option value="Bongkar-pasang furnitur" data-difficulty="Hard">Bongkar-pasang furnitur</option>
-                  <option value="Buatin presentasi" data-difficulty="Hard">Buatkan presentasi</option>
-                </optgroup>
-                <optgroup label="Expert">
-                  <option value="Spionase ringan" data-difficulty="Expert">Spionase ringan (misalnya: cek pasangan)</option>
-                  <option value="Revisi skripsi" data-difficulty="Expert">Revisi skripsi</option>
-                  <option value="Kencan formal" data-difficulty="Expert">Kencan formal (temani ke acara)</option>
-                  <option value="Nemenin jalan/jalan-jalan" data-difficulty="Expert">Temani jalan/jalan-jalan</option>
-                  <option value="Bantu jadi MC/acara" data-difficulty="Expert">Bantu jadi MC/acara</option>
-                  <option value="Temenin meeting bisnis" data-difficulty="Expert">Temani meeting bisnis</option>
-                  <option value="Dampingin interview atau sidang" data-difficulty="Expert">Dampingi interview atau sidang</option>
-                </optgroup>
-                <option value="Lainnya" data-difficulty="">Lainnya</option>
-              </select>
-              <div id="bantuan-error" class="invalid-feedback">Jenis layanan wajib dipilih.</div>
-              <div id="detail-prompt" class="detail-prompt">Mohon jelaskan secara rinci apa keperluan yang harus kami bantu</div>
-            </div>
-            
-            <div class="mb-3">
-              <label for="tingkat" class="form-label">Tingkat Kesulitan</label>
-              <select id="tingkat" class="form-select">
-                <option value="">-- Pilih Tingkat Kesulitan --</option>
-                <option value="Ezzy">Easy</option>
-                <option value="Medium">Medium</option>
-                <option value="Hard">Hard</option>
-                <option value="Expert">Expert</option>
-              </select>
-              <div id="tingkat-error" class="invalid-feedback">Tingkat kesulitan wajib dipilih.</div>
-            </div>
-            
-            <div class="mb-3">
-              <label for="kondisi" class="form-label">Detail Order</label>
-              <textarea id="kondisi" rows="3" class="form-control" placeholder="Jelaskan sedetail mungkin..."></textarea>
-              <div id="kondisi-error" class="invalid-feedback">Detail order wajib diisi.</div>
-            </div>
-            
-            <div class="mb-3">
-              <label for="lokasiJemput" class="form-label">Lokasi Jemput</label>
-              <input id="lokasiJemput" class="form-control" type="text" placeholder="Bagikan lokasi Anda" />
-              <div id="lokasiJemput-error" class="invalid-feedback">Lokasi jemput wajib diisi.</div>
-            </div>
-            
-            <div class="mb-3">
-              <label for="lokasiAntar" class="form-label">Lokasi Tujuan</label>
-              <input id="lokasiAntar" class="form-control" type="text" placeholder="Bagikan lokasi tujuan" />
-              <div id="lokasiAntar-error" class="invalid-feedback">Lokasi tujuan wajib diisi.</div>
-            </div>
-            
-            <div class="mb-3">
-              <label for="waktu" class="form-label">Waktu Penjemputan</label>
-              <input id="waktu" class="form-control" type="text" placeholder="Contoh: Senin, 22 April - 15.00 WIB" />
-              <div id="waktu-error" class="invalid-feedback">Waktu wajib diisi.</div>
-            </div>
-            
-            <div class="mb-4">
-              <label class="form-label">Metode Pembayaran</label>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="pembayaran" id="pembayaranTunai" value="Tunai">
-                <label class="form-check-label" for="pembayaranTunai">
-                  Tunai
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="pembayaran" id="pembayaranTransfer" value="Transfer">
-                <label class="form-check-label" for="pembayaranTransfer">
-                  Transfer
-                </label>
-              </div>
-              <div id="pembayaran-error" class="invalid-feedback">Metode pembayaran wajib dipilih.</div>
-            </div>
-            
-            <div class="rules-box p-3 mb-4">
-              <h5 class="text-pink">Ketentuan</h5>
-              <p class="mb-0">*Wajib Shareloc setelah format terkirm ke WhatsApp</p>
-              <p class="mb-0">*Jika pesanan transfer, Anda wajib melakukan transfer terlebih dahulu</p>
-              <p class="mb-0">*Wajib menyetujui ketentuan di bawah ini</p>
-            </div>
-            
-            <div class="mb-4">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="setuju">
-                <label class="form-check-label" for="setuju">
-                  Saya setuju dan akan bertanggung jawab atas pesanan ini
-                </label>
-              </div>
-            </div>
-            
-            <div class="row g-3 mb-3">
-              <div class="col-6">
-                <button id="submitBtn1" class="btn btn-submit-ezzy w-100 text-white submit-button" type="button" data-number="6289603782703" disabled>Admin 1</button>
-              </div>
-              <div class="col-6">
-                <button id="submitBtn2" class="btn btn-submit-medium w-100 text-white submit-button" type="button" data-number="6285814957679" disabled>Admin 2</button>
-              </div>
-             
-            </div>
-          </form>
         </div>
-      </div>
-    </div>
-  </div>
+    </nav>
 
-  <!-- Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
-  <!--Javascript logic-->
-  <script src="./js/form.js"></script>
+    <!-- Header Section -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mb-4 animate__animated animate__fadeInDown">Open Requirement</h1>
+                <div class="job-header animate__animated animate__fadeIn">
+                    <h4 class="mb-0">Bergabunglah dengan Tim Kami</h4>
+                    <p class="mb-0">Temukan karir impian Anda bersama SuruhKami.Solo</p>
+                </div>
+            </div>
+        </div>
+ 
+
+        <!-- No Jobs Display (Tambahkan ini jika diperlukan, sesuai dengan kondisi) style="display: none;" -->
+        <div id="noJobs" class="row">
+            <div class="col-12 no-jobs animate__animated animate__fadeIn">
+                <img src="./assets/jobs-hire.svg" alt="No Jobs Available" class="img-fluid">
+                <h3 class="text-center mt-4">Maaf, saat ini belum ada lowongan tersedia</h3>
+                <p class="text-center text-muted">Silakan periksa kembali di lain waktu atau hubungi kami untuk informasi lebih lanjut</p>
+                <button class="btn btn-dark mt-3">Hubungi Kami</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-footer mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SuruhKami.Solo</h5>
+                    <p>Solusi layanan terbaik untuk bisnis Anda di kota Solo dan sekitarnya.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Hubungi Kami</h5>
+                    <p>Email: info@suruhkami.solo.id<br>
+                       Phone: +62 271 123456</p>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 SuruhKami.Solo. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/loker.js"></script>
 </body>
 </html>
