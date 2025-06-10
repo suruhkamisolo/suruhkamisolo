@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const isChecked = setuju.checked;
       submitBtn1.disabled = !isChecked;
       submitBtn2.disabled = !isChecked;
+      submitBtn3.disabled = !isChecked;
     }
     
     // Event listener untuk checkbox persetujuan
