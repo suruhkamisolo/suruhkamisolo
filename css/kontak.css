@@ -194,17 +194,41 @@ body {
     color: var(--primary-color);
     transition: all 0.3s ease;
 }
-
 .admin-buttons {
     display: flex;
     justify-content: space-between;
     gap: 10px;
     margin-top: 40px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .admin-button {
     flex: 1;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    background-color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+/* Admin Buttons - Responsive Design dengan Icon Lingkaran */
+.admin-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.admin-button {
+    flex: 1;
+    min-width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -233,6 +257,10 @@ body {
     background-color: #F2FFE6;
 }
 
+.admin-button:nth-child(4):hover {
+    background-color: #f6e7a0;
+}
+
 .admin-icon {
     width: 60px;
     height: 60px;
@@ -257,6 +285,10 @@ body {
     background-color: #F2FFE6;
 }
 
+.admin-button:nth-child(4) .admin-icon {
+    background-color: #f4e8ac;
+}
+
 .admin-icon i {
     font-size: 24px;
     color: var(--primary-color);
@@ -270,18 +302,292 @@ body {
     color: #49FB4E;
 }
 
+.admin-button:nth-child(4) .admin-icon i {
+    color: #676000;
+}
+
 .admin-name {
     font-weight: 600;
     font-size: 14px;
     color: var(--dark);
     margin-bottom: 3px;
+    text-align: center;
 }
 
 .admin-title {
     font-size: 12px;
     color: #777;
+    text-align: center;
 }
 
+/* Tablet Large (769px - 1024px) */
+@media (max-width: 1024px) {
+    .admin-buttons {
+        gap: 12px;
+    }
+    
+    .admin-button {
+        padding: 16px 12px;
+        min-width: 115px;
+    }
+    
+    .admin-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 8px;
+    }
+    
+    .admin-icon i {
+        font-size: 22px;
+    }
+    
+    .admin-name {
+        font-size: 13px;
+    }
+    
+    .admin-title {
+        font-size: 11px;
+    }
+}
+
+/* Tablet (481px - 768px) */
+@media (max-width: 768px) {
+    .admin-buttons {
+        gap: 15px;
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    .admin-button {
+        min-width: calc(50% - 7.5px);
+        padding: 20px 15px;
+    }
+    
+    .admin-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 12px;
+    }
+    
+    .admin-icon i {
+        font-size: 22px;
+    }
+    
+    .admin-name {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+    
+    .admin-title {
+        font-size: 13px;
+    }
+}
+
+/* Mobile Large (376px - 480px) */
+@media (max-width: 480px) {
+    .linktree-container {
+        padding: 15px;
+    }
+    
+    .admin-buttons {
+        gap: 12px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .admin-button {
+        min-width: calc(50% - 6px);
+        padding: 18px 12px;
+    }
+    
+    .admin-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .admin-icon i {
+        font-size: 20px;
+    }
+    
+    .admin-name {
+        font-size: 13px;
+        margin-bottom: 3px;
+    }
+    
+    .admin-title {
+        font-size: 12px;
+    }
+}
+
+/* Mobile Medium (321px - 375px) */
+@media (max-width: 375px) {
+    .admin-buttons {
+        gap: 10px;
+    }
+    
+    .admin-button {
+        min-width: calc(50% - 5px);
+        padding: 15px 8px;
+    }
+
+    .admin-icon {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 8px;
+    }
+
+    .admin-icon i {
+        font-size: 18px;
+    }
+
+    .admin-name {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+
+    .admin-title {
+        font-size: 11px;
+    }
+}
+
+/* Mobile Small (hingga 320px) */
+@media (max-width: 320px) {
+    .linktree-container {
+        padding: 12px;
+    }
+    
+    .admin-buttons {
+        gap: 8px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .admin-button {
+        min-width: calc(50% - 4px);
+        padding: 12px 6px;
+    }
+
+    .admin-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 6px;
+    }
+
+    .admin-icon i {
+        font-size: 16px;
+    }
+
+    .admin-name {
+        font-size: 11px;
+        margin-bottom: 2px;
+    }
+
+    .admin-title {
+        font-size: 10px;
+    }
+}
+
+/* Landscape Mobile (max-height: 500px) */
+@media (max-height: 500px) and (orientation: landscape) {
+    .admin-buttons {
+        gap: 8px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .admin-button {
+        padding: 10px 8px;
+    }
+
+    .admin-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 6px;
+    }
+
+    .admin-icon i {
+        font-size: 16px;
+    }
+
+    .admin-name {
+        font-size: 11px;
+        margin-bottom: 1px;
+    }
+
+    .admin-title {
+        font-size: 10px;
+    }
+}
+
+/* Hover Effects - Hanya untuk desktop */
+@media (hover: hover) and (pointer: fine) {
+    .admin-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .admin-button:nth-child(1):hover {
+        background-color: #FFE6F2;
+    }
+
+    .admin-button:nth-child(2):hover {
+        background-color: #E6F2FF;
+    }
+
+    .admin-button:nth-child(3):hover {
+        background-color: #F2FFE6;
+    }
+
+    .admin-button:nth-child(4):hover {
+        background-color: #f6e7a0;
+    }
+}
+
+/* Touch devices - Active state untuk feedback */
+@media (hover: none) {
+    .admin-button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+    
+    .admin-button:active .admin-icon {
+        transform: scale(0.9);
+    }
+}
+
+/* Sangat kecil - Stack vertikal jika diperlukan */
+@media (max-width: 280px) {
+    .admin-buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .admin-button {
+        min-width: 200px;
+        max-width: 250px;
+        padding: 15px 20px;
+    }
+    
+    .admin-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 8px;
+    }
+    
+    .admin-icon i {
+        font-size: 20px;
+    }
+    
+    .admin-name {
+        font-size: 13px;
+    }
+    
+    .admin-title {
+        font-size: 12px;
+    }
+}
 .map-container {
     margin-top: 40px;
     margin-bottom: 40px;
