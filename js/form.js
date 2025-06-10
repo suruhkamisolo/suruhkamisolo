@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const isChecked = setuju.checked;
       submitBtn1.disabled = !isChecked;
       submitBtn2.disabled = !isChecked;
-      submitBtn3.disabled = !isChecked;
     }
     
     // Event listener untuk checkbox persetujuan
@@ -157,7 +156,7 @@ _NB: Jika admin tidak membalas dalam kurun 10 menit maka harap menghubungi admin
     }
     
     // Event listener untuk tombol-tombol submit
-    [submitBtn1, submitBtn2, submitBtn3].forEach(btn => {
+    [submitBtn1, submitBtn2,].forEach(btn => {
       btn.addEventListener("click", function() {
         if (!validateForm()) {
           return;
