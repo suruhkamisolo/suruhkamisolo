@@ -16,6 +16,20 @@
         observer.observe(element);
     });
 
+        // logika untuk auto close pada bagian offcanvas-navbar
+    document.addEventListener('DOMContentLoaded', function () {
+        const offcanvasElement = document.getElementById('offcanvasNavbar');
+        const offcanvasInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+        
+        // Ambil semua link di dalam offcanvas
+        document.querySelectorAll('#offcanvasNavbar .nav-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            // Auto-close setelah klik
+            offcanvasInstance.hide();
+        });
+        });
+    });
+
     // Cek apakah ada job cards
     const jobCards = document.querySelectorAll('.job-card');
     const jobListings = document.getElementById('jobListings');

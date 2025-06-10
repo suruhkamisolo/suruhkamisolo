@@ -25,6 +25,20 @@ function main() {
       }, 100);
   });
   
+// logika untuk auto close pada bagian offcanvas-navbar
+  document.addEventListener('DOMContentLoaded', function () {
+    const offcanvasElement = document.getElementById('offcanvasNavbar');
+    const offcanvasInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+    
+    // Ambil semua link di dalam offcanvas
+    document.querySelectorAll('#offcanvasNavbar .nav-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        // Auto-close setelah klik
+        offcanvasInstance.hide();
+      });
+    });
+  });
+
   // Manually trigger AOS animations for mobile devices
   if (window.innerWidth < 768) {
       document.addEventListener('scroll', function() {
